@@ -2,7 +2,7 @@ const express = require('express');
 var bigram = require('./algorithm/bigram');
 var formidable = require('formidable');
 var fs = require('fs');
-const port = 11022;
+const port = 11021;
 
 var app = express();
 
@@ -12,6 +12,19 @@ const path = '../front_end';
 app.use(express.static(path + '/aboutUs'));
 app.use(express.static(path + '/accessFile'));
 app.use(express.static(path + '/WebChatBotLayout'));
+
+
+
+var https = require('https');
+
+var options = {
+    key: fs.readFileSync('/etc/letsencrypt/live/chatbot.hmkrl.com/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/chatbot.hmkrl.com/cert.pem')
+};
+
+
+
+
 
 app.post('/ask',(req,res)=>{
   var form = new formidable.IncomingForm();
@@ -58,10 +71,14 @@ app.post('/server',(req,res)=>{
         });
       });
 });
-app.listen(port,() => {
+//app express
+/*app.listen(port,() => {
   console.log('Listening on port:',port);
+});*/
+
+
+
+https.createServer(options, app).listen(port, function () {
+    console.log('Https server listening on port ' + port);
 });
-
-
-
 
