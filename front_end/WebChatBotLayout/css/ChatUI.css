@@ -1,10 +1,10 @@
 @charset "UTF-8";
 .cu.chat {
-  font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial","Microsoft JhengHei",wf_SegoeUI,"Segoe UI",Segoe,"Segoe WP",Tahoma,Verdana,Ubuntu,"Bitstream Vera Sans","DejaVu Sans",Tahoma,微軟正黑體,"LiHei Pro","WenQuanYi Micro Hei","Droid Sans Fallback","AR PL UMing TW",Roboto,"Helvetica Neue","Hiragino Maru Gothic ProN",メイリオ,"ヒラギノ丸ゴ ProN W4",Meiryo,"Droid Sans",sans-serif;
+  font-family: inherit;
   width: 100%;
   display: block;
   padding: .5em 0;
-  font-size: 16px;
+  font-size: inherit;
   background-attachment: fixed;
   background-size: cover;
   clear: both;
@@ -192,7 +192,7 @@
 
 .cu.chat[data-style="telegram"] .message.right:not(.read) > .content > .meta > .item:last-child:after {
   font-family: 'icomoon' !important;
-  content: " \e903";
+  content: "✓";
 }
 
 .cu.chat[data-style="telegram"] .message.right.read > .content > .meta > .item:last-child:after {
@@ -332,7 +332,8 @@
 
 .cu.chat[data-style="telegram"] .message > .content > .meta > .item {
   font-size: .9em;
-  color: #d1d1d1;
+  /*color: #d1d1d1;*/
+  color:inherit;
 }
 
 .cu.chat[data-style="telegram"] .message > .content > .preview + .meta {
@@ -352,7 +353,8 @@
 }
 
 .cu.chat[data-style="telegram"] .message.right > .content > .meta > .item {
-  color: #78c67f;
+  /*color: #78c67f;*/
+  color:inherit;
 }
 
 .cu.chat[data-style="telegram"] .message.right > .content > .text > *:last-child:after {
